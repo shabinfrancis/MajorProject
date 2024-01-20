@@ -32,7 +32,7 @@ main()
   });
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    mongoose.connect(dbUrl);
 }
 
 app.set("view engine", "ejs");
@@ -65,11 +65,6 @@ const sessionOptions = {
     httpOnly: true,
   },
 };
-
-// app.get("/", (req, res) => {
-//   res.send("Hi, I am root.");
-// });
-
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -87,16 +82,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.get("/demouser", async (req,  res) => {
-//   let fakeUser = new User({
-//     email: "student@gmail.com",
-//     username: "Shabin"
-//   });
-  
-//   let registeredUser = await user.register(fakeUser, "helloworld");
-//   res.send(registeredUser);
-// });
-
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
@@ -108,13 +93,8 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
   let {statusCode=500, message="Something Went Wrong!"} = err;
   res.status(statusCode).render("error.ejs", { message });
-  //res.status(statusCode).send(message);
 });
 
 app.listen(8080, () =>{
     console.log("server listening to port 8080.");
 });
-
-
-
-
