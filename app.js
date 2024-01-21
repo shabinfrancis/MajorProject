@@ -30,8 +30,8 @@ main()
     console.log(err);
   });
 
-async function main() {
-  await  mongoose.connect(dbUrl);
+function main() {
+  mongoose.connect(dbUrl);
 }
 
 app.set("view engine", "ejs");
