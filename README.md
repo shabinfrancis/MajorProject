@@ -25,41 +25,10 @@ https://major-project-dj38.onrender.com
 ## 🛠 Skills
 - HTML, CSS, Javascript
 - Node.js, Express, EJS, REST API
-- MongoDB
-
-
-## Installation
-
-Install my-project with npm
-
-```bash
-  npm install my-project
-  cd my-project
-```
+- Mongoose, MongoDB
     
-## Run Locally
-
-Clone the project
+## Clone the project
 
 ```bash
   git clone https://github.com/shabinfrancis/MajorProject.git
 ```
-
-Go to the project directory
-
-```bash
-  cd MajorProject
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
